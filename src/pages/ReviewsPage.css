@@ -1,0 +1,152 @@
+.reviews-page {
+  text-align: center;
+}
+
+.background-image {
+  display: inline-block;
+  clip-path: circle(320% at 50% -550%);
+}
+
+.background-image:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  margin-left: -584px;
+  top: 0;
+  width: 1168px;
+  height: 100%;
+  display: inline-block;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 22, 0.5)
+  );
+}
+
+.property-image {
+  height: 430px;
+  width: 1168px;
+  object-fit: cover;
+  position: relative;
+  /* z-index: -2; */
+  display: block;
+}
+
+.reviews-page__container {
+  text-align: left;
+  max-width: 950px;
+  margin: 0 auto;
+  position: relative;
+  top: -300px;
+}
+
+.reviews-page__header {
+  color: white;
+  margin-bottom: 64px;
+}
+
+.reviews-card {
+  background: #fff;
+  padding: 40px 32px;
+  border-radius: 7px;
+  color: #173753;
+}
+
+@media screen and (max-width: 1168px) {
+
+  .background-image {
+    clip-path: circle(250% at 50% -310%);
+  }
+  
+  .background-image:after {
+    left: 50%;
+    margin-left: -450px;
+    width: 900px;
+    height: 430px;
+  }
+  
+  .property-image {
+    position: static;
+    height: 430px;
+    width: 900px;
+  }
+
+  .reviews-page__container {
+    max-width: 700px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+
+  .background-image {
+    clip-path: circle(250% at 50% -240%);
+  }
+  
+  .background-image:after {
+    left: 50%;
+    margin-left: -350px;
+    width: 700px;
+    height: 430px;
+  }
+  
+  .property-image {
+    position: static;
+    height: 430px;
+    width: 700px;
+  }
+
+  .reviews-page__container {
+    max-width: 600px;
+  } 
+
+}
+
+@media screen and (max-width: 700px) {
+
+  .background-image {
+    clip-path: circle(250% at 50% -220%);
+  }
+  
+  .background-image:after {
+    left: 50%;
+    margin-left: -300px;
+    width: 600px;
+  }
+  
+  .property-image {
+    position: static;
+    width: 600px;
+  }
+
+  .reviews-page__container {
+    max-width: 500px;
+  } 
+
+}
+
+@media screen and (max-width: 700px) {
+
+  .background-image {
+    clip-path: none;
+  }
+  
+  .background-image:after {
+    left: 0;
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  .property-image {
+    position: static;
+    width: 100vw;
+  }
+
+  .reviews-page__container {
+    max-width: none;
+  } 
+
+  .reviews-page__header {
+  margin-left: 32px;
+  }
+
+}

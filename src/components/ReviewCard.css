@@ -1,0 +1,55 @@
+.review{
+  padding: 24px 0;
+  border-bottom: 1px solid rgb(219, 219, 219);
+}
+
+.review:last-of-type {
+  border-bottom: none;
+}
+
+.review-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.rate-badge {
+  display: inline-block;
+  background-color: #0276db;
+  color: white;
+  padding: 7px 10px;
+  border-radius: 8px;
+}
+
+.rate-badge span {
+  font-weight: bold;
+}
+
+.review-headline{
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.review-text{
+  margin-bottom: 16px;
+}
+
+.thumb-icon{
+margin-right: 8px;
+}
+
+.review-feedback{
+  vertical-align: 3px;
+}
+
+.author-name{
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.review-date{
+  font-size: 0.8rem;
+  color: #808080;
+}
