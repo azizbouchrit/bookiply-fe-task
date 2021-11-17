@@ -4,6 +4,7 @@ import { getReviews } from "../store/actions";
 import { useDispatch, useSelector } from "react-redux";
 import "./ReviewsHeader.css";
 import { Store } from "../store/types";
+import { useNumberDebounce, useStringDebounce } from "../utils/debounceHooks";
 
 const ReviewsHeader = () => {
   const [channel, setChannel] = useState("");
@@ -11,14 +12,22 @@ const ReviewsHeader = () => {
   const dispatch = useDispatch();
   const reviewsCount = useSelector((state: Store) => state.count);
 
+  //Allows us to only dispatch when the user stops typing
+  //this allows us to make less API calls 
+  const debouncedScore = useNumberDebounce(score, 250);
+  const debouncedChannel = useStringDebounce(channel, 250);
+
   useEffect(() => {
     dispatch(
       getReviews({
-        channel: channel.toUpperCase(),
-        score: score ? score : 0,
+        channel:
+          debouncedChannel.toUpperCase() === "BOOKING.COM"
+            ? "BOOKINGCOM"
+            : debouncedChannel.toUpperCase(),
+        score: debouncedScore ? debouncedScore : 0,
       })
     );
-  }, [channel, score]);
+  }, [debouncedChannel, debouncedScore]);
 
   return (
     <div className='reviews-header'>

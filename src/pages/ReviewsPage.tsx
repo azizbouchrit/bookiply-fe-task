@@ -27,6 +27,9 @@ const ReviewsPage = () => {
           {reviews.map((review, index) => (
             <ReviewCard key={index} review={review} />
           ))}
+          {reviews.length === 0 && (
+            <h3>There are no Reviews for this Property</h3>
+          )}
         </div>
       </div>
     </div>
