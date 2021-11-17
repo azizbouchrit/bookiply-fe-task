@@ -9,8 +9,6 @@ export const fetchReviews = async (payload: FetchingPayload) => {
     const res = await axios.get(
       `https://interview-task-api.bookiply.io/reviews?${channel + score}`
     );
-    console.log(res);
-    
     reviews = res.data;
   } catch (e) {
     console.error(e);
